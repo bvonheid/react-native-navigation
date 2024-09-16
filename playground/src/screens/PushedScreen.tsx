@@ -12,6 +12,7 @@ import Root from '../components/Root';
 import Navigation from '../services/Navigation';
 import testIDs from '../testIDs';
 import Screens from './Screens';
+import Video from 'react-native-video';
 
 const {
   PUSHED_SCREEN_HEADER,
@@ -117,6 +118,20 @@ export default class PushedScreen extends NavigationComponent<Props> {
           label="Hide previous screen top bar"
           testID={HIDE_PREVIOUS_SCREEN_TOP_BAR}
           onPress={this.hidePreviousScreenTopBar}
+        />
+        <Video
+          style={{
+            width: '100%',
+            aspectRatio: 16 / 9,
+          }}
+          controls={true}
+          source={{
+            uri:
+              'https://api.admiralcloud.com/v5/deliverEmbed/f2ce6815-5227-44ce-964b-bc4138861909/hlsManifest',
+            type: 'm3u8',
+          }}
+          muted={false}
+          paused={true}
         />
       </Root>
     );
