@@ -48,7 +48,8 @@
     "test-all": "node ./scripts/test-all",
     "prerelease": "npm run build",
     "release": "node ./scripts/release",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./",
+    "postinstall": "patch-package"
   },
   "peerDependencies": {
     "react": "*",
@@ -63,6 +64,7 @@
   "dependencies": {
     "hoist-non-react-statics": "3.x.x",
     "lodash": "4.17.x",
+    "patch-package": "^8.0.0",
     "prop-types": "15.x.x",
     "react-lifecycles-compat": "2.0.0",
     "react-native-video": "^6.5.0",
